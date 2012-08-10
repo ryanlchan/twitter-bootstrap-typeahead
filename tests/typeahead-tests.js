@@ -174,7 +174,32 @@
         typeahead.$menu.remove();
     });
 
-    test('basic ajax url as source should work', function() {    
+
+    test("should handle multiple object values", function () {
+        var $input = $('<input />').typeahead({
+                source: [{ id: 1, name: 'aa', type: 'small' }, { id: 2, name: 'ab', type: 'big' }, { id: 3, name: 'ac', type: 'medium'}],
+                val: ['name', 'type'],
+                itemSelected: function (item,values,text) { vals = values }
+            }),
+          typeahead = $input.data('typeahead'),
+          changed = false;
+
+        $input.val('a');
+        typeahead.lookup();
+
+        $input.change(function () { changed = true });
+
+        $(typeahead.$menu.find('li')[2]).mouseover().click();
+
+        equal($input.val(), 'ac', 'input value was correctly set');
+        equal(vals.toJSON, {'name': 'ac', 'type': 'medium'}.toJSON, 'returns the correct value object');
+        ok(!typeahead.$menu.is(':visible'), 'the menu was hidden');
+        ok(changed, 'a change event was fired');
+
+        typeahead.$menu.remove();
+    });
+
+    test('basic ajax url as source should work', function() {
         var $input = $('<input />').typeahead({ ajax: '/test' }),
             typeahead = $input.data('typeahead');
 
