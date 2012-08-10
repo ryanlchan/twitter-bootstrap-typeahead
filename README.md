@@ -29,7 +29,7 @@ Installation
 2) Download this plugin.
 
 - [ZIP](https://github.com/tcrosen/twitter-bootstrap-typeahead/zipball/master)
-- [Clone in Windows](github-windows://openRepo/https://github.com/tcrosen/twitter-bootstrap-typeahead) 
+- [Clone in Windows](github-windows://openRepo/https://github.com/tcrosen/twitter-bootstrap-typeahead)
 - `git clone git://github.com/tcrosen/twitter-bootstrap-typeahead.git`
 
 3) Include files in your HTML. The minimum required for this plugin are:
@@ -127,7 +127,7 @@ Events
         </td>
     </tr>
 </table>
-		
+
 Options
 -----------------
 
@@ -169,7 +169,7 @@ Options
         </td>
         <td>
             The object required to use a remote datasource.  <br /><i>See also: ajax as a string (below)</i>
-        </td>            
+        </td>
     </tr>
     <tr>
         <td>
@@ -182,8 +182,8 @@ Options
             null
         </td>
         <td>
-            Optionally, a simple URL may be used instead of the AJAX object. <br />   <i>See also: ajax as an object (above)</i>        
-        </td>            
+            Optionally, a simple URL may be used instead of the AJAX object. <br />   <i>See also: ajax as an object (above)</i>
+        </td>
     </tr>
     <tr>
         <td>
@@ -197,7 +197,7 @@ Options
         </td>
         <td>
             The object property to match the query against and highlight in the results.
-        </td>            
+        </td>
     </tr>
     <tr>
         <td>
@@ -259,15 +259,29 @@ Options
         <td>
             val
         </td>
-		<td>
+        <td>
             string
         </td>
-		<td>
+        <td>
             'id'
         </td>
         <td>
             The object property that is returned when an item is selected.
-        </td>        
+        </td>
+    </tr>
+    <tr>
+        <td>
+            val
+        </td>
+		<td>
+            array
+        </td>
+		<td>
+            null
+        </td>
+        <td>
+            The object properties that are returned when an item is selected.
+        </td>
     </tr>
 </table>
 
